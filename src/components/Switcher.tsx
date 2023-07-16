@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
-import { Tab, Tabs } from "@mui/material";
+import { Box, Tab, Tabs } from "@mui/material";
 import { useState } from "react";
+import { TabPanel } from "./core";
+import Outreach from "./Outreach";
 
 const CustomTab = styled(Tab)(({ theme }) => ({
   borderRadius: 48,
@@ -23,6 +25,13 @@ const CustomTab = styled(Tab)(({ theme }) => ({
   },
 }));
 
+function a11yProps(index: number) {
+  return {
+    id: `simple-tab-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
+  };
+}
+
 const Switcher: React.FC = () => {
   const [value, setValue] = useState(0);
 
@@ -31,18 +40,26 @@ const Switcher: React.FC = () => {
   };
 
   return (
-    <Tabs
-      value={value}
-      onChange={handleChange}
-      sx={{ paddingY: 2 }}
-      TabIndicatorProps={{
-        sx: { display: "none" },
-      }}
-      centered
-    >
-      <CustomTab label="Outreach" />
-      <CustomTab label="Engage" />
-    </Tabs>
+    <Box>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        sx={{ paddingY: 2 }}
+        TabIndicatorProps={{
+          sx: { display: "none" },
+        }}
+        centered
+      >
+        <CustomTab label="Outreach" {...a11yProps(0)} />
+        <CustomTab label="Engage" {...a11yProps(1)} />
+      </Tabs>
+      <TabPanel value={value} index={0}>
+        <Outreach />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        Engage
+      </TabPanel>
+    </Box>
   );
 };
 
