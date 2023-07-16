@@ -1,7 +1,7 @@
 import { OpenInBrowserOutlined } from "@mui/icons-material";
 import { Box, Button, Stack } from "@mui/material";
-import DraftCard from "./DraftCard";
 import User from "./User";
+import DraftList from "./DraftList";
 
 const Outreach: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const Outreach: React.FC = () => {
         profession="Founder"
         company="TouchBase"
       />
-      <Stack justifyContent="center" alignItems="center">
+      <Stack justifyContent="center" alignItems="center" py={1}>
         <Button
           variant="contained"
           sx={{ borderRadius: 16, textTransform: "none", padding: "8px 24px" }}
@@ -22,7 +22,7 @@ const Outreach: React.FC = () => {
           Generate Outreach Mail
         </Button>
       </Stack>
-      <DraftCard />
+      <DraftList />
     </Box>
   );
 };

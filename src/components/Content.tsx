@@ -3,7 +3,10 @@ import Switcher from "./Switcher";
 
 const Content: React.FC = () => {
   return (
-    <Box height="100%" sx={{ boxShadow: "0 0 2px 0 rgba(0, 0, 0, 0.07)" }}>
+    <Box
+      height="100%"
+      sx={{ boxShadow: "0 0 2px 0 rgba(0, 0, 0, 0.07)", overflow: "auto" }}
+    >
       <Switcher />
     </Box>
   );

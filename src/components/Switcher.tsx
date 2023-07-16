@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, Tab, Tabs } from "@mui/material";
+import { Box, Tab, Tabs, Typography } from "@mui/material";
 import { useState } from "react";
 import { TabPanel } from "./core";
 import Outreach from "./Outreach";
@@ -9,18 +9,18 @@ const CustomTab = styled(Tab)(({ theme }) => ({
   "&.MuiTab-root": {
     backgroundColor: "#eeeeee",
     color: "#000",
-    padding: "12px 32px",
+    padding: "8px 32px",
     letterSpacing: "2px",
     fontSize: "16px",
     "&:hover": {
-      backgroundColor: "#cccccc",
+      backgroundColor: "#eeeeee",
     },
   },
   "&.Mui-selected": {
-    backgroundColor: "#0000ff",
+    backgroundColor: "#1565C0",
     color: "#fff",
     "&:hover": {
-      backgroundColor: "#0101db",
+      backgroundColor: "#1565C0",
     },
   },
 }));
@@ -44,7 +44,7 @@ const Switcher: React.FC = () => {
       <Tabs
         value={value}
         onChange={handleChange}
-        sx={{ paddingY: 2 }}
+        sx={{ paddingY: 1 }}
         TabIndicatorProps={{
           sx: { display: "none" },
         }}
@@ -57,7 +57,7 @@ const Switcher: React.FC = () => {
         <Outreach />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Engage
+        <Typography textAlign="center">Engage</Typography>
       </TabPanel>
     </Box>
   );

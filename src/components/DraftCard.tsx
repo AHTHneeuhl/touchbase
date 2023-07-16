@@ -5,7 +5,11 @@ import {
 } from "@mui/icons-material";
 import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
 
-const DraftCard: React.FC = () => {
+type TProps = {
+  message: string;
+};
+
+const DraftCard: React.FC<TProps> = ({ message }) => {
   return (
     <Box py={1} px={2} sx={{ backgroundColor: "#e6e6ff", borderRadius: "4px" }}>
       <Stack
@@ -24,10 +28,7 @@ const DraftCard: React.FC = () => {
         </Button>
       </Stack>
       <Typography fontSize={14} color="#3f3f3f" py={1}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis error
-        porro incidunt, asperiores laborum facere molestiae labore. Error,
-        facilis consequuntur. Atque, neque? Dolor dolorum eligendi odio tempore
-        natus, laborum corrupti!
+        {message}
       </Typography>
       <Stack
         spacing={1}
