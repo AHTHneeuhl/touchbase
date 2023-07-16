@@ -1,6 +1,8 @@
 import { SettingsOutlined } from "@mui/icons-material";
 import { Button, Stack, Typography } from "@mui/material";
 
+import touchBase from "assets/touch-base.jpg";
+
 const Topbar: React.FC = () => {
   return (
     <Stack
@@ -15,9 +17,20 @@ const Topbar: React.FC = () => {
         borderTopRightRadius: 16,
       }}
     >
-      <Typography color="primary" fontWeight="medium" fontSize="24px">
-        TouchBase
-      </Typography>
+      <Stack direction="row" alignItems="center" spacing={1}>
+        <img
+          src={touchBase}
+          alt="TouchBase"
+          style={{
+            width: "40px",
+            height: "40px",
+            borderRadius: "50%",
+          }}
+        />
+        <Typography color="primary" fontWeight="medium" fontSize="24px">
+          TouchBase
+        </Typography>
+      </Stack>
       <Button sx={{ textTransform: "none" }} endIcon={<SettingsOutlined />}>
         Free Credits
       </Button>
