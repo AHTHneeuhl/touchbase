@@ -1,10 +1,17 @@
 import { OpenInBrowserOutlined } from "@mui/icons-material";
 import { Box, Button, Stack } from "@mui/material";
 import DraftCard from "./DraftCard";
+import User from "./User";
 
 const Outreach: React.FC = () => {
   return (
     <Box>
+      <User
+        firstName="Jennifer"
+        lastName="Smith"
+        profession="Founder"
+        company="TouchBase"
+      />
       <Stack justifyContent="center" alignItems="center">
         <Button
           variant="contained"
