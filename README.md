@@ -14,3 +14,5 @@ Tech Stack:
 - TypeScript
 - ReactJs
 - Material UI
+- Hooks
+- Redux Toolkit
