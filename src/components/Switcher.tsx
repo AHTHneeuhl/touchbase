@@ -57,7 +57,9 @@ const Switcher: React.FC = () => {
         <Outreach />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Typography textAlign="center">Engage</Typography>
+        <Typography color="#5f5f5f" fontSize="14px" textAlign="center" py={4}>
+          Engage
+        </Typography>
       </TabPanel>
     </Box>
   );
